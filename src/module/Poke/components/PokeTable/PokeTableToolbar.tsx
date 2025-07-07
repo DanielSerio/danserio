@@ -1,15 +1,31 @@
-import { POKE_ENDPOINTS } from "#const";
+import { POKE_ENDPOINTS, type PokeEntityName } from "#const";
 import { Flex, Group, Select, Text } from "@mantine/core";
 import { ToolbarButton } from "./ToolbarButton";
+import { usePokeListContext } from "#poke/hooks/usePokeListContext";
+import { useEffect } from "react";
 
 export function PokeTableToolbar() {
+  const [{ urlData, entity }, { setEntity }] = usePokeListContext();
+
+  useEffect(() => {
+    const origin = window.location.origin;
+    window.history.replaceState(
+      {},
+      "",
+      `${origin}/#/apps/poke?entity=${urlData.path.replace(/\//g, "")}&${
+        urlData.search
+      }`
+    );
+  }, [urlData.path, urlData.search]);
+
   return (
     <Flex className="poke-table-toolbar" p="md" gap="sm">
       <Select
         label="Entity"
         size="xs"
         data={Object.keys(POKE_ENDPOINTS)}
-        value="pokemon"
+        value={entity}
+        onChange={(ent) => setEntity(ent as PokeEntityName)}
       />
 
       <Group align="flex-end" className="paging-controls">

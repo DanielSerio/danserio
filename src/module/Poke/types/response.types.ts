@@ -1,11 +1,16 @@
-export interface PokemonListResponse<ItemType extends NamedItem> {
+export interface PokemonListResponse<ItemType extends UnnamedItem> {
   count: number;
   next: null | string;
   previous: null | string;
   results: ItemType[];
 }
 
-export interface NamedItem {
-  name: string;
+export interface UnnamedItem {
+  [k: string]: any;
   url: string;
+  name?: string;
+}
+
+export interface NamedItem extends UnnamedItem {
+  name: string;
 }
