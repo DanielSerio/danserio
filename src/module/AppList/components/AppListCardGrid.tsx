@@ -7,11 +7,12 @@ export function AppListCardGrid({ children }: PropsWithChildren) {
       className="app-list-card-grid"
       gutter="md"
       p="md"
-      maw={1200}
+      align="stretch"
+      maw={1080}
       mx="auto"
     >
       {Children.map(children, (child) => (
-        <Grid.Col span={{ base: 12, sm: 6, md: 4, lg: 3 }}>{child}</Grid.Col>
+        <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>{child}</Grid.Col>
       ))}
     </Grid>
   );

@@ -1,0 +1,33 @@
+.app-card {
+  a.header {
+    position: relative;
+    filter: grayscale(90%);
+    transition: filter 160ms ease-out;
+  }
+
+  figure {
+    height: 160px;
+    margin: 0;
+    display: grid;
+    place-content: center;
+
+    img {
+      object-fit: cover;
+      object-position: center center;
+      height: 100%;
+      width: 100%;
+    }
+
+    &.poke img {
+      object-fit: contain;
+    }
+  }
+
+  &:hover a.header {
+    filter: grayscale(0%);
+
+    figure.poke {
+      background: #ef5350;
+    }
+  }
+}
