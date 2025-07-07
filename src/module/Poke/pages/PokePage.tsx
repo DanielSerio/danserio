@@ -1,3 +1,9 @@
+import { AppBreadcrumbs } from "#core/components";
+
 export function PokePage() {
-  return <div>PokePage</div>;
+  return (
+    <>
+      <AppBreadcrumbs />
+    </>
+  );
 }

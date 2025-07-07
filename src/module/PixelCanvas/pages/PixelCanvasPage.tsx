@@ -1,3 +1,9 @@
+import { AppBreadcrumbs } from "#core/components";
+
 export function PixelCanvasPage() {
-  return <div>PixelCanvasPage</div>;
+  return (
+    <>
+      <AppBreadcrumbs />
+    </>
+  );
 }

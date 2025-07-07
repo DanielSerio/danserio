@@ -1,3 +1,9 @@
+import { AppBreadcrumbs } from "#core/components";
+
 export function WeatherPage() {
-  return <div>WeatherPage</div>;
+  return (
+    <>
+      <AppBreadcrumbs />
+    </>
+  );
 }
