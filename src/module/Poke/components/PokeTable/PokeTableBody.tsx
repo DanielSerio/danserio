@@ -4,7 +4,7 @@ import { POKE_COLUMNS } from "#poke/const";
 import { usePokeListContext } from "#poke/hooks/usePokeListContext";
 import { Skeleton } from "@mantine/core";
 import type { VisibilityState } from "@tanstack/react-table";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 
 function SkeletonRow({
   gridTemplateColumns,
@@ -28,10 +28,18 @@ function SkeletonRow({
 }
 
 export function PokeTableBody() {
-  const [{ table, visibilityState, query, limit }] = usePokeListContext();
+  const [{ table, visibilityState, query, limit, totalRecords }] =
+    usePokeListContext();
   const gridTemplateColumns = getGridTemplateColumns(
     POKE_COLUMNS.filter((col) => visibilityState[col.id])
   );
+
+  useEffect(() => {
+    if (totalRecords === 0 && !query.isLoading) {
+      query.refetch();
+    }
+  }, []);
+
   return (
     <Table.Section>
       {!!query.isLoading &&

@@ -12,14 +12,23 @@ export function PokePage() {
   ) as PokeListInitialValues["entity"];
   const limitString = currentSearchParams.get("limit");
   const offsetString = currentSearchParams.get("offset");
+  const paramsAreTruthy = !!limitString && !!offsetString && !!entity;
+
+  if (paramsAreTruthy) {
+    console.info("Rendered PokePage", { entity, limitString, offsetString });
+  }
 
   return (
     <PokeProviders
-      defaults={{
-        entity,
-        limit: limitString ? +limitString : 25,
-        offset: offsetString ? +offsetString : 0,
-      }}
+      defaults={
+        paramsAreTruthy
+          ? {
+              entity,
+              limit: limitString ? +limitString : 25,
+              offset: offsetString ? +offsetString : 0,
+            }
+          : undefined
+      }
     >
       <AppBreadcrumbs />
       <PokeTable />
