@@ -1,0 +1,13 @@
+::selection {
+  background-color: var(--mantine-color-anchor);
+  color: black;
+}
+
+.mantine-TypographyStylesProvider-root > article {
+  h1,
+  h2,
+  h3 {
+    font-weight: 400;
+    color: white;
+  }
+}

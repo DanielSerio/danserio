@@ -1,0 +1,19 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#const": ["src/const"],
+      "#core/*": ["src/module/Core/*"],
+      "#about/*": ["src/module/About/*"],
+      "#app-list/*": ["src/module/AppList/*"],
+      "#pixel-canvas/*": ["src/module/PixelCanvas/*"],
+      "#poke/*": ["src/module/Poke/*"],
+      "#weather/*": ["src/module/Weather/*"]
+    }
+  }
+}
