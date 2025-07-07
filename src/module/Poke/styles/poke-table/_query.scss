@@ -1,0 +1,15 @@
+//medium-small screens
+@media screen and (min-width: 568px) {
+  .table.poke-table {
+    height: calc(100svh - 172px);
+  }
+
+  .poke-table-toolbar .paging-controls {
+    margin-right: 0;
+  }
+
+  .poke-table-toolbar.mantine-Flex-root {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,13 @@
+.poke-table {
+  border: 1px solid transparent;
+  height: calc(100svh - 240px);
+}
+
+.mantine-AppShell-root:has(.table.poke-table) {
+  overflow: hidden;
+
+  main#main.mantine-AppShell-main {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}

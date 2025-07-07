@@ -3,6 +3,28 @@
   color: black;
 }
 
+#root {
+  display: contents;
+}
+
+html,
+body {
+  position: static;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  overflow: visible;
+}
+
+.mantine-AppShell-root {
+  overflow-x: hidden;
+}
+
+.mantine-AppShell-main {
+  margin-bottom: 36px;
+}
+
 .mantine-TypographyStylesProvider-root > article {
   h1,
   h2,
