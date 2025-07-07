@@ -20,7 +20,7 @@ function SkeletonRow({
     <Table.Row gridTemplateColumns={gridTemplateColumns}>
       {[...new Array(colCount)].map((_, ci) => (
         <Table.Cell key={`skel:col:${ci}`} label={""}>
-          <Skeleton h={14} w="100%" />
+          <Skeleton mb={3} mt={4} h={14} w="100%" />
         </Table.Cell>
       ))}
     </Table.Row>
