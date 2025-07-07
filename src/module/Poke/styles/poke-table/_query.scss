@@ -13,3 +13,27 @@
     justify-content: space-between;
   }
 }
+
+@media screen and (max-width: 568px) {
+  .table.poke-table {
+    .header {
+      display: none;
+    }
+
+    .row,
+    .cell {
+      display: flex;
+    }
+    .cell {
+      justify-content: space-between;
+    }
+
+    .row {
+      flex-direction: column;
+
+      .cell .label {
+        display: inline-flex;
+      }
+    }
+  }
+}

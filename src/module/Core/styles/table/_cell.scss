@@ -1,3 +1,14 @@
 .table .cell {
-  border: 1px dotted grey;
+  &:not(:last-child) {
+    border-right: 1px solid var(--mantine-color-default-border);
+  }
+
+  .label {
+    display: none;
+  }
+
+  .value {
+    display: block;
+    padding: 3px var(--mantine-spacing-xs);
+  }
 }

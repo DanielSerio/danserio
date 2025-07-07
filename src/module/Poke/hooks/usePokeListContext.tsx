@@ -1,6 +1,7 @@
 import { POKE_ENDPOINTS, type PokeEntityName } from "#const";
 import {
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -83,6 +84,7 @@ function usePokeListState(defaults?: PokeListInitialValues) {
 
   const state = {
     entity,
+    totalRecords: paging.totalRecords,
     limit: paging.limit,
     offset: paging.offset,
     urlData,
@@ -92,7 +94,13 @@ function usePokeListState(defaults?: PokeListInitialValues) {
   };
 
   const methods = {
-    setEntity,
+    setEntity: useCallback(
+      (...params: Parameters<typeof setEntity>) => {
+        setEntity(...params);
+        pagingMethods.setOffset(0);
+      },
+      [setEntity, pagingMethods.setOffset]
+    ),
     setVisibilityState,
     ...pagingMethods,
   };
@@ -109,6 +117,15 @@ export const PokeListProvider = ({
   defaults,
 }: PropsWithChildren<{ defaults?: PokeListInitialValues }>) => {
   const state = usePokeListState(defaults);
+  const [_, methods] = state;
+
+  useEffect(() => {
+    if (defaults) {
+      methods.setEntity(defaults?.entity);
+      methods.setLimit(defaults?.limit);
+      methods.setOffset(defaults?.offset);
+    }
+  }, [defaults]);
 
   return (
     <PokeListContext.Provider value={state}>

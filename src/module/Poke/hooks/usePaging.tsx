@@ -84,6 +84,7 @@ export function usePaging(defaults?: PokeListInitialValues) {
 
   const methods = {
     setLimit,
+    setOffset: (off: number) => setPaging((curr) => ({ ...curr, offset: off })),
     goToFirstPage,
     goToPreviousPage,
     goToNextPage,

@@ -1,6 +1,10 @@
 .poke-table {
   border: 1px solid transparent;
   height: calc(100svh - 240px);
+
+  .body {
+    font-size: 0.875rem;
+  }
 }
 
 .mantine-AppShell-root:has(.table.poke-table) {

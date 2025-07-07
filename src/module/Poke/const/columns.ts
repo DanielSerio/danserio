@@ -1,5 +1,6 @@
 import type { TableColumn } from "#core/types";
 import type { NamedItem, UnnamedItem } from "#poke/types/response.types";
+import { titleName } from "#poke/utilities";
 
 
 export const POKE_COLUMNS: TableColumn<NamedItem | UnnamedItem>[] = [
@@ -24,6 +25,10 @@ export const POKE_COLUMNS: TableColumn<NamedItem | UnnamedItem>[] = [
     id: 'name',
     header: 'Name',
     size: 120,
-    accessorKey: 'name'
+    accessorFn({ name }) {
+      if (name) {
+        return titleName(name);
+      }
+    }
   }
 ];
