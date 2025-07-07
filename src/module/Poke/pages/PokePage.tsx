@@ -12,12 +12,7 @@ export function PokePage() {
   ) as PokeListInitialValues["entity"];
   const limitString = currentSearchParams.get("limit");
   const offsetString = currentSearchParams.get("offset");
-  console.info({
-    currentSearchParams: `${currentSearchParams}`,
-    entity,
-    limitString,
-    offsetString,
-  });
+
   return (
     <PokeProviders
       defaults={{
