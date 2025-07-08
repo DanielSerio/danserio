@@ -6,6 +6,12 @@ import "#app-list/styles/output/app-list.scss";
 export function AppListPage() {
   const appList = getAppNavList();
 
+  if (window) {
+    window.scrollTo({
+      top: 0,
+    });
+  }
+
   return (
     <>
       <AppListCardGrid>

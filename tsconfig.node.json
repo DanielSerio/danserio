@@ -28,7 +28,8 @@
       "#app-list/*": ["src/module/AppList/*"],
       "#pixel-canvas/*": ["src/module/PixelCanvas/*"],
       "#poke/*": ["src/module/Poke/*"],
-      "#weather/*": ["src/module/Weather/*"]
+      "#weather/*": ["src/module/Weather/*"],
+      "#e404/*": ["src/module/E404/*"]
     }
   },
   "include": ["vite.config.ts"]

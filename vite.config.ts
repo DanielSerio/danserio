@@ -14,6 +14,7 @@ export default defineConfig({
       '#pixel-canvas': resolve(__dirname, 'src/module/PixelCanvas'),
       '#poke': resolve(__dirname, 'src/module/Poke'),
       "#weather": resolve(__dirname, 'src/module/Weather'),
+      "#e404": resolve(__dirname, 'src/module/E404'),
     }
   }
 });
