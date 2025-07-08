@@ -1,6 +1,6 @@
 import type { WeatherResponse } from "#weather/types/weather.response";
 import { Box, Card, Flex, Skeleton, Text } from "@mantine/core";
-import { format, formatDistance, subMinutes } from "date-fns";
+import { formatDistance } from "date-fns";
 import { WeatherIcon } from "./WeatherIcon";
 import { getWeatherDescriptionFromCode } from "#weather/utilities";
 
