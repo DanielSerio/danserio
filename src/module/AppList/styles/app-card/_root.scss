@@ -1,9 +1,14 @@
 .app-card {
   a.header {
-    position: relative;
     filter: grayscale(90%);
     transition: filter 160ms ease-out;
     margin-bottom: 24px;
+  }
+
+  a.header,
+  figure,
+  img {
+    position: relative;
   }
 
   figure {
@@ -11,16 +16,23 @@
     margin: 0;
     display: grid;
     place-content: center;
+    overflow: hidden;
 
     img {
       object-fit: cover;
-      object-position: center center;
-      height: 100%;
+      object-position: 50% 50%;
+      // height: 100%;
       width: 100%;
+      min-height: 160px;
+      min-width: 100%;
     }
 
     &.poke img {
       object-fit: contain;
+    }
+
+    &:not(.poke) img {
+      transform: translateY(-15%);
     }
   }
 
