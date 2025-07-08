@@ -5,6 +5,7 @@ import { resolve } from 'path';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: "/danserio/",
   resolve: {
     alias: {
       "#const": resolve(__dirname, 'src/const'),
