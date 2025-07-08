@@ -43,7 +43,7 @@ function App() {
                 <Route path="*" element={<E404Page />} />
               </Routes>
             </AppShell.Main>
-            <AppShell.Footer zIndex={-1}>
+            <AppShell.Footer zIndex={0}>
               <AppFooter />
             </AppShell.Footer>
           </AppShell>

@@ -33,3 +33,11 @@ body {
     color: white;
   }
 }
+
+.footer-line {
+  opacity: 0.65;
+
+  &:hover {
+    opacity: 1;
+  }
+}
