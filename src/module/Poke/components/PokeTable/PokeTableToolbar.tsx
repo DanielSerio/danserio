@@ -29,9 +29,10 @@ export function PokeTableToolbar() {
       window.history.replaceState(
         {},
         "",
-        `${origin}/#/apps/poke?entity=${urlData.path.replace(/\//g, "")}&${
-          urlData.search
-        }`
+        `${origin}/danserio/#/apps/poke?entity=${urlData.path.replace(
+          /\//g,
+          ""
+        )}&${urlData.search}`
       );
     }
   }, [urlData.path, urlData.search]);

@@ -1,5 +1,6 @@
 import { LINKS } from "#const";
-import { Anchor, Breadcrumbs } from "@mantine/core";
+import { Breadcrumbs } from "@mantine/core";
+import { Link } from "react-router-dom";
 
 export function AppBreadcrumbs() {
   const url = window.location.href;
@@ -13,11 +14,11 @@ export function AppBreadcrumbs() {
   const items = [
     {
       title: "Apps",
-      href: "/#/apps",
+      href: "/apps",
     },
     {
       title: foundApp.title,
-      href: `/#/apps${foundApp.href}`,
+      href: `/apps${foundApp.href}`,
     },
   ];
   return (
@@ -30,9 +31,9 @@ export function AppBreadcrumbs() {
       pb="xs"
     >
       {items.map((item) => (
-        <Anchor href={item.href} key={item.href}>
+        <Link to={item.href} key={item.href}>
           {item.title}
-        </Anchor>
+        </Link>
       ))}
     </Breadcrumbs>
   );
