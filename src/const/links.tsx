@@ -55,7 +55,7 @@ export const LINKS: LinkType[] = [
         href: "/pixel-canvas",
         icon: TbPalette,
         title: "Pixel Canvas",
-        imgSrc: "/art-supplies.jpg",
+        imgSrc: "art-supplies.jpg",
         description: () => <p>A simple, canvas-based drawing application.</p>,
         page: PixelCanvasPage,
       },
@@ -63,7 +63,7 @@ export const LINKS: LinkType[] = [
         href: "/poke",
         icon: TbTable,
         title: "Poke API Table",
-        imgSrc: "/pokeapi.png",
+        imgSrc: "pokeapi.png",
         description: () => (
           <p>
             A server-side paginated API table using data from the{" "}
@@ -86,7 +86,7 @@ export const LINKS: LinkType[] = [
             <a href="https://open-meteo.com/">https://open-meteo.com/</a>.
           </p>
         ),
-        imgSrc: "/weather.jpg",
+        imgSrc: "weather.jpg",
         page: WeatherPage,
       },
     ],
