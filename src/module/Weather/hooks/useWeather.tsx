@@ -1,3 +1,4 @@
+import { WeatherService } from "#weather/weather.service";
 import { useQuery } from "@tanstack/react-query";
 import {
   createContext,
@@ -21,7 +22,9 @@ function useWeatherQuery(params: WeatherParams | null) {
       `lat:${params?.lat}`,
       `lng:${params?.lng}`,
     ],
-    async queryFn() {},
+    async queryFn() {
+      return await WeatherService.getForecast(params!.lat, params!.lng);
+    },
     staleTime: 960000,
   });
 }
