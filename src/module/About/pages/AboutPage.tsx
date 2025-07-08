@@ -1,7 +1,7 @@
 import { AboutMe } from "#about/components/AboutMe";
 import { ParticlesBackground } from "#core/components/layout/ParticlesBackground";
 import { useParticles } from "#core/hooks";
-import { Button } from "@mantine/core";
+import { Button, Flex } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 
 export function AboutPage() {
@@ -16,7 +16,11 @@ export function AboutPage() {
         particlesLoaded={onParticlesLoaded}
       />
       <AboutMe>
-        <Button onClick={() => navigate("/apps")}>See some mini-apps</Button>
+        <Flex align="center" justify="center">
+          <Button mt={36} mb={24} onClick={() => navigate("/apps")}>
+            See some mini-apps
+          </Button>
+        </Flex>
       </AboutMe>
     </>
   );

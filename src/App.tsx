@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import { LINKS, THEME } from "#const";
 import { AppFooter, AppHeader } from "#core/components";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import E404Page from "#e404/pages";
 
 const client = new QueryClient();
 
@@ -39,6 +40,7 @@ function App() {
 
                   return <Route key={href} path={href} element={<Page />} />;
                 })}
+                <Route path="*" element={<E404Page />} />
               </Routes>
             </AppShell.Main>
             <AppShell.Footer zIndex={-1}>

@@ -1,0 +1,14 @@
+.pseudo-link {
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  color: var(--mantine-color-indigo-4);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

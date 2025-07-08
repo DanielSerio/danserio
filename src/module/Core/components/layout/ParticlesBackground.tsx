@@ -4,7 +4,7 @@ import { type ComponentProps } from "react";
 
 export function ParticlesBackground(props: ComponentProps<typeof Particles>) {
   return (
-    <Box style={{ zIndex: 0, position: "relative" }}>
+    <Box style={{ zIndex: 0, position: "relative", maxHeight: 400 }}>
       <Box
         style={{
           position: "absolute",
